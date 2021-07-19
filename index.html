@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>clon-last.fm</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png"
+          alt=""
+        />
+      </div>
+    </header>
+    <nav class="genres_container">
+      <a href="" class="genres rock">rock</a>
+      <a href="" class="genres hip-hop">hip-hop</a>
+      <a href="" class="genres indie">indie</a>
+      <a href="" class="genres jazz">jazz</a> 
+      <a href="" class="genres reggae">reggae</a>
+    </nav>
+    <section class="menu">
+      <ul>
+        <li><a href="">Overview</a></li>
+        <li><a href="">Top 10 Listened</a></li>
+        <li><a href="">The Biggest</a></li>
+      </ul>
+    </section>
+    <main>
+        <h2 class=menu-item-selected></h2>
+        <div class="lista"></div>
+    </main>
 
     <script src="script.js"></script>
-
-</body>
-
+  </body>
 </html>

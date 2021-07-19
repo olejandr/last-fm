@@ -1,11 +1,10 @@
-/* Colores:
-   $color-primary:  #222
-   $color-secondary: rgba(110, 69, 51, 1);
-   $color-focus-menu: #B90000; 
-   $color-background: #fff;
-   $color-list-odd: #f2f2f2;
-   
-*/
+/* Colores: */
+$color-primary: #222;
+$color-secondary: rgba(110, 69, 51, 1);
+$color-focus-menu: #b90000;
+$color-background: #fff;
+$color-list-odd: #f2f2f2;
+$primary-font: "Open Sans", Sans-serif;
 
 /* Imágenes:
 logo: https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png
@@ -33,4 +32,124 @@ reggae: saturate(10%);
 
 /* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
  */
+body {
+  font-family: "Open Sans", Sans-serif;
+  background-color: $color-background;
+}
+header {
+  background-color: $color-primary;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
 
+.genres_container {
+  display: flex;
+  justify-content: center;
+
+  .genres {
+    margin: 1em;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-background;
+    text-decoration: none;
+  }
+
+  .rock {
+    background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg");
+    background-size: cover;
+    filter: sepia(90%);
+  }
+  .hip-hop {
+    background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg");
+    background-size: cover;
+    filter: contrast(200%);
+  }
+
+  .indie {
+    background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg");
+    background-size: cover;
+    filter: grayscale(50%);
+  }
+
+  .jazz {
+    background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg");
+    background-size: cover;
+    filter: hue-rotate(90deg);
+  }
+
+  .reggae {
+    background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg");
+    background-size: cover;
+    filter: saturate(10%);
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      display: inline;
+      margin: 1em;
+    }
+
+    a {
+      color: $color-primary;
+      text-decoration: none;
+      &:focus {
+        color: $color-focus-menu;
+      }
+    }
+  }
+}
+
+.lista {
+  display: flex;
+  flex-flow: column;
+  counter-reset: counter-songs;
+
+  .list-item {    
+    padding: 0.5em;
+    display: inline-block;
+
+    .group-name {
+      text-decoration: none;
+      color: $color-primary;
+      margin-left: 1em;
+      &:before {
+        counter-increment: counter-songs;
+        content: counter(counter-songs) ". ";
+      }
+    }
+
+    .song-title {
+      font-weight: bold;
+      margin-left: 2em;
+    }
+  
+    .group-name, .song-title, .listeners {
+      font-family: $primary-font;
+      font-size: 0.8em;
+    }
+  
+    .listeners {
+     float: right;
+     font-size: 0.7em;
+     
+    }
+  
+  }
+
+  
+  li:nth-child(odd) {
+    background-color: $color-list-odd;
+  }
+}

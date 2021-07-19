@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/* Colores: */
+/* Imágenes:
+logo: https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png
+rock: https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg
+hip-hop: https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg
+indie:https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg
+jazz:https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg
+reggae: https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg
+*/
+/* Filtros: 
+
+rock:   sepia(90%);
+hip-hop:contrast(200%);
+indie:  grayscale(50%);
+jazz:   hue-rotate(90deg);
+reggae: saturate(10%);
+
+*/
+/* Fuente:
+    font-family:Open Sans,Lucida Grande,Helvetica Neue,Helvetica,Arial,Sans-serif;
+
+*/
+/* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
+ */
+body {
+  font-family: "Open Sans", Sans-serif;
+  background-color: #fff;
+}
+
+header {
+  background-color: #222;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.genres_container {
+  display: flex;
+  justify-content: center;
+}
+.genres_container .genres {
+  margin: 1em;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+}
+.genres_container .rock {
+  background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg");
+  background-size: cover;
+  filter: sepia(90%);
+}
+.genres_container .hip-hop {
+  background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg");
+  background-size: cover;
+  filter: contrast(200%);
+}
+.genres_container .indie {
+  background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg");
+  background-size: cover;
+  filter: grayscale(50%);
+}
+.genres_container .jazz {
+  background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg");
+  background-size: cover;
+  filter: hue-rotate(90deg);
+}
+.genres_container .reggae {
+  background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg");
+  background-size: cover;
+  filter: saturate(10%);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+.menu ul {
+  list-style-type: none;
+}
+.menu ul li {
+  display: inline;
+  margin: 1em;
+}
+.menu ul a {
+  color: #222;
+  text-decoration: none;
+}
+.menu ul a:focus {
+  color: #b90000;
+}
+
+.lista {
+  display: flex;
+  flex-flow: column;
+  counter-reset: counter-songs;
+}
+.lista .list-item {
+  padding: 0.5em;
+  display: inline-block;
+}
+.lista .list-item .group-name {
+  text-decoration: none;
+  color: #222;
+  margin-left: 1em;
+}
+.lista .list-item .group-name:before {
+  counter-increment: counter-songs;
+  content: counter(counter-songs) ". ";
+}
+.lista .list-item .song-title {
+  font-weight: bold;
+  margin-left: 2em;
+}
+.lista .list-item .group-name, .lista .list-item .song-title, .lista .list-item .listeners {
+  font-family: "Open Sans", Sans-serif;
+  font-size: 0.8em;
+}
+.lista .list-item .listeners {
+  float: right;
+  font-size: 0.7em;
+}
+.lista li:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+/*# sourceMappingURL=style.css.map */
